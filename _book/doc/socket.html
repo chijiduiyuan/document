@@ -1,0 +1,455 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>socket.io · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="frame.html" />
+    
+    
+    <link rel="prev" href="nodejs.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    nodejs
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="nodejs.html">
+            
+                <a href="nodejs.html">
+            
+                    
+                    运行原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="socket.html">
+            
+                <a href="socket.html">
+            
+                    
+                    socket.io
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="frame.html">
+            
+                <a href="frame.html">
+            
+                    
+                    框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="question.html">
+            
+                <a href="question.html">
+            
+                    
+                    面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    mysql
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="mysql.html">
+            
+                <a href="mysql.html">
+            
+                    
+                    mysql基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >socket.io</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="socketio">socket.io</h1>
+<h3 id="&#x5BA2;&#x6237;&#x7AEF;api">&#x5BA2;&#x6237;&#x7AEF;api</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> socket = io(<span class="hljs-string">&apos;ws://localhost:8000&apos;</span>);
+<span class="hljs-comment">//connect:&#x8FDE;&#x63A5;&#x6210;&#x529F;</span>
+
+socket.on(<span class="hljs-string">&apos;connection&apos;</span>,()=&gt;{
+    <span class="hljs-comment">//&#x4F7F;&#x7528;send</span>
+    socket.send(<span class="hljs-string">&apos;hello!&apos;</span>);
+    <span class="hljs-comment">//&#x6216;&#x8005;&#x4F7F;&#x7528;emit</span>
+    socket.emit(<span class="hljs-string">&apos;salutations&apos;</span>,<span class="hljs-string">&apos;Hello&apos;</span>,{<span class="hljs-string">&apos;mr&apos;</span>:<span class="hljs-string">&apos;john&apos;</span>},Unit8Array.from([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]))
+})
+
+<span class="hljs-comment">//&#x5904;&#x7406;send&#x6570;&#x636E;</span>
+socket.on(<span class="hljs-string">&apos;message&apos;</span>,data=&gt;{
+    <span class="hljs-built_in">console</span>.log(data);
+})
+
+<span class="hljs-comment">//&#x5904;&#x7406;emit</span>
+socket.on(<span class="hljs-string">&apos;greetings&apos;</span>,(elem1,elem2,elem3)=&gt;{
+    <span class="hljs-built_in">console</span>.log(elem1,elem2,elem3)
+})
+
+<span class="hljs-comment">//&#x76D1;&#x542C;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x4E8B;&#x4EF6;</span>
+socket.on(<span class="hljs-string">&apos;disconnect&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&apos;</span>);
+})
+
+<span class="hljs-comment">//&#x91CD;&#x8FDE;</span>
+socket.on(<span class="hljs-string">&apos;reconnect&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x5230;&#x670D;&#x52A1;&#x5668;&apos;</span>);
+})
+</code></pre>
+<h3 id="&#x670D;&#x52A1;&#x7AEF;api">&#x670D;&#x52A1;&#x7AEF;api</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>)();
+<span class="hljs-keyword">const</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;http&apos;</span>).createServer();
+<span class="hljs-keyword">const</span> io = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;socket.io&apos;</span>)(server);
+
+io.on(<span class="hljs-string">&apos;connection&apos;</span>,socket=&gt;{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x5230;&#x670D;&#x52A1;&#x5668;&apos;</span>);
+    <span class="hljs-comment">//&#x4F7F;&#x7528;send</span>
+    socket.send(<span class="hljs-string">&apos;hello&apos;</span>);
+    <span class="hljs-comment">//&#x6216;&#x8005;&#x4F7F;&#x7528;emit</span>
+    socket.emit(<span class="hljs-string">&apos;greetings&apos;</span>,<span class="hljs-string">&apos;hey&apos;</span>,{<span class="hljs-string">&apos;ms&apos;</span>:<span class="hljs-string">&apos;jane&apos;</span>},Buffer.from([<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]));
+    <span class="hljs-comment">//&#x76D1;&#x542C;send</span>
+    socket.on(<span class="hljs-string">&apos;message&apos;</span>,(data)=&gt;{
+        <span class="hljs-built_in">console</span>.log(data);
+    })
+    <span class="hljs-comment">//&#x76D1;&#x542C;emit</span>
+    socket.on(<span class="hljs-string">&apos;salutations&apos;</span>,(elem1,elem2,elem3)=&gt;{
+        <span class="hljs-built_in">console</span>.log(elem1,elem2,elem3);
+    })
+    socket.on(<span class="hljs-string">&apos;disconnect&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&apos;</span>)
+    })
+    socket.on(<span class="hljs-string">&apos;error&apos;</span>,()=&gt;{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x8FDE;&#x63A5;&#x9519;&#x8BEF;&apos;</span>);
+    })
+})
+
+server.listen(<span class="hljs-number">8000</span>);
+</code></pre>
+<h3 id="&#x5212;&#x5206;&#x547D;&#x540D;&#x7A7A;&#x95F4;">&#x5212;&#x5206;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h3>
+<pre><code class="lang-js"><span class="hljs-comment">//&#x53EF;&#x4EE5;&#x628A;&#x670D;&#x52A1;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x9ED8;&#x8BA4;/&#xFF0C;&#x4E0D;&#x540C;&#x7A7A;&#x95F4;&#x5185;&#x4E0D;&#x80FD;&#x901A;&#x4FE1;</span>
+io.on(<span class="hljs-string">&apos;connection&apos;</span>,socket=&gt;{});
+io.of(<span class="hljs-string">&apos;/news&apos;</span>).on(<span class="hljs-string">&apos;connection&apos;</span>,socket=&gt;{});
+
+<span class="hljs-comment">//&#x5BA2;&#x6237;&#x7AEF;&#x94FE;&#x63A5;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
+<span class="hljs-keyword">let</span> socket = io(<span class="hljs-string">&apos;http://localhost/&apos;</span>);
+<span class="hljs-keyword">let</span> socket = io(<span class="hljs-string">&apos;http://localhost/news&apos;</span>)
+</code></pre>
+<h3 id="&#x623F;&#x95F4;">&#x623F;&#x95F4;</h3>
+<blockquote>
+<p>&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x623F;&#x95F4;,&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x591A;&#x4E2A;&#x623F;&#x95F4;
+&#x5982;&#x679C;&#x5728;&#x5927;&#x5385;&#x91CC;&#x5E7F;&#x64AD;&#xFF0C;&#x90A3;&#x4E48;&#x591A;&#x6709;&#x5728;&#x5927;&#x5385;&#x91CC;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x4EFB;&#x4F55;&#x623F;&#x95F4;&#x5185;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x80FD;&#x6536;&#x5230;&#x6D88;&#x606F;
+&#x6240;&#x6709;&#x5728;&#x623F;&#x95F4;&#x91CC;&#x7684;&#x5E7F;&#x64AD;&#x548C;&#x901A;&#x4FE1;&#x90FD;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x623F;&#x95F4;&#x4EE5;&#x5916;&#x7684;&#x5BA2;&#x6237;&#x7AEF;
+``` js
+//&#x8FDB;&#x5165;&#x623F;&#x95F4;
+socket.join(&apos;group1&apos;);
+//&#x79BB;&#x5F00;&#x623F;&#x95F4;
+socket.leave(&apos;group1&apos;);</p>
+</blockquote>
+<p>//&#x670D;&#x52A1;&#x7AEF;
+socket.on(&apos;chat&apos;,function(data){
+    socket.join(&apos;chat&apos;);
+})
+socket.on(&apos;leave_chat&apos;,function(data){
+    socket.leave(&apos;chat&apos;);
+})
+//&#x5BA2;&#x6237;&#x7AEF;
+socket.emit(&apos;chat&apos;);
+socket.emit(&apos;leave_chat&apos;);</p>
+<p>//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5206;&#x7EC4;&#x4FE1;&#x606F;
+io.sockets.manager.rooms</p>
+<p>//&#x83B7;&#x53D6;&#x6B64;socketid&#x8FDB;&#x5165;&#x7684;&#x623F;&#x95F4;&#x4FE1;&#x606F;
+io.sockets.manager.roomClients[socket.id]</p>
+<p>//&#x83B7;&#x53D6;chat&#x4E2D;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x5728;&#x6B64;&#x623F;&#x95F4;&#x7684;socket&#x5B9E;&#x4F8B;
+io.sockets.clients(&apos;chat&apos;);</p>
+<pre><code>
+### &#x5E7F;&#x64AD;
+``` js
+//&#x5411;&#x5927;&#x5385;&#x548C;&#x623F;&#x95F4;&#x5E7F;&#x64AD;
+io.sockets.emit(&apos;message&apos;,&apos;&#x5168;&#x5C40;&#x5E7F;&#x64AD;&apos;);
+//&#x5411;&#x9664;&#x4E86;&#x81EA;&#x5DF1;&#x4E4B;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x5BA2;&#x6237;&#x7AEF;&#x5E7F;&#x64AD;
+socket.broadcast.emit(&apos;message&apos;,msg);
+//&#x7ED9;&#x6307;&#x5B9A;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;
+io.sockets.socket(socketid).emit(&apos;message&apos;,msg);
+//&#x7ED9;&#x8BE5;socket&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x6D88;&#x606F;
+socket.emit(&apos;message&apos;,msg);
+
+//&#x5411;&#x623F;&#x95F4;&#x5185;&#x5E7F;&#x64AD;,&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x63D0;&#x4EA4;&#x4E8B;&#x4EF6;&#xFF0C;&#x63D0;&#x4EA4;&#x8005;&#x4F1A;&#x5305;&#x542B;&#x5728;&#x5185;
+io.in(&apos;chat&apos;).emit(&apos;message&apos;,msg);
+io.of(&apos;/news&apos;).in(&apos;chat&apos;).emit(&apos;msaage&apos;,msg);
+//&#x5411;&#x623F;&#x95F4;&#x5185;&#x5E7F;&#x64AD;,&#x4ECE;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x63D0;&#x4EA4;&#x4E8B;&#x4EF6;&#xFF0C;&#x63D0;&#x4EA4;&#x7740;&#x4F1A;&#x6392;&#x9664;&#x5728;&#x5916;
+socket.broadcast.to(&apos;chat&apos;).emit(&apos;message&apos;,msg);
+</code></pre><h3 id="&#x83B7;&#x53D6;&#x8FDE;&#x63A5;&#x7684;&#x5BA2;&#x6237;&#x7AEF;socket">&#x83B7;&#x53D6;&#x8FDE;&#x63A5;&#x7684;&#x5BA2;&#x6237;&#x7AEF;socket</h3>
+<pre><code class="lang-js">io.sockets.clients().forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">socket</span>)</span>{
+    <span class="hljs-comment">//...</span>
+})
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="nodejs.html" class="navigation navigation-prev " aria-label="Previous page: 运行原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="frame.html" class="navigation navigation-next " aria-label="Next page: 框架">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"socket.io","level":"1.2.2","depth":2,"next":{"title":"框架","level":"1.2.3","depth":2,"path":"doc/frame.md","ref":"doc/frame.md","articles":[]},"previous":{"title":"运行原理","level":"1.2.1","depth":2,"path":"doc/nodejs.md","ref":"doc/nodejs.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/socket.md","mtime":"2021-03-15T09:51:36.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-18T07:18:20.850Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
