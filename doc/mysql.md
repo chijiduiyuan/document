@@ -1,3 +1,126 @@
+### linux下mysql安装
+1.检查是否已安装过mysql,执行命令
+```
+rpm -qa | grep mysql
+//示例
+> mysql-libs-5.1.73-5.el6_6.x86_64
+```
+
+2.若安装，删除
+```
+rpm -e --nodeps mysql-libs-5.1.73-5.el6_6.x86_64
+```
+
+3.再次查看是否安装过
+```
+rpm -qa | grep mysql
+```
+
+4.查询所有mysql对应的文件夹
+```
+whereis mysql
+//示例:
+> mysql: /usr/bin/mysql /usr/local/mysql
+find / -name mysql
+> /run/lock/subsys/mysql
+> /var/lib/selinux/targeted/active/modules/100/mysql
+> /usr/bin/mysql
+```
+
+5.删除mysql目录
+```
+rm -rf /run/lock/subsys/mysql /var/lib/selinux/targeted/active/modules/100/mysql /usr/bin/mysql
+```
+
+6.检查mysql用户组和用户是否存在，如果没有，则创建
+```
+cat /etc/group | grep mysql
+cat /etc/passwd | grep mysql
+groupadd mysql
+useradd -r -g mysql mysql
+```
+
+7.下载mysql,[mysql下载地址](https://downloads.mysql.com/archives/community/)
+```
+wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
+```
+
+8.解压
+```
+tar xvf https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
+```
+
+9.移动文件至/usr/local下,并将文件改名为mysql
+```
+mv mysql-5.7.26-linux-glibc2.12-x86_64 /usr/local/mysql
+```
+
+10.在usr/local/mysql目录下创建logs目录，需要写权限
+```
+mkdir /usr/local/mysql/logs
+chmod 777 -R /usr/local/mysql/logs
+```
+
+11.更改mysql目录下所有的目录及文件夹所属的用户组和用户，以及权限
+```
+chown -R mysql:mysql /usr/local/mysql
+chmod -R 755 /usr/local/mysql
+```
+
+12.配置my.cnf
+```
+[mysqld]
+bind-address=0.0.0.0
+port=3306
+user=mysql
+basedir=/usr/local/mysql
+datadir=/usr/local/mysql/data
+socket=/usr/local/mysql/data/mysql.sock
+log-error=/usr/local/mysql/logs/mysql.err
+pid-file=/usr/local/mysql/logs/mysql.pid
+#character config
+character_set_server=utf8mb4
+symbolic-links=0
+explicit_defaults_for_timestamp=true
+```
+
+13.编译
+```
+cd /usr/local/mysql/bin
+./mysqld --initialize --default-files=/etc/my.cnf --user=mysql --datadir=/usr/local/mysql/data --basedir=/usr/local/mysql
+```
+
+14.编译成功，记住密码
+```
+cat /usr/local/mysql/logs/mysql.log
+```
+
+15.启动
+```
+service mysql start
+```
+
+16.修改密码、外部连接、全局环境变量
+```
+//修改密码
+cd /usr/local/mysql/bin
+./mysql -uroot -p
+set password = password('你的密码');
+alter user 'root'@'localhost' password expire never;
+flush privileges;
+
+//允许外部连接
+./mysql -uroot -p
+use mysql;
+update user set host = '%' where user = 'root';
+flush privileges;
+
+//全局环境变量,建立软连接
+cd /
+ln -s /usr/local/mysql/bin/mysql /usr/bin/mysql
+```
+
+
 ### 数据库三大范式
 * 第一范式：每个列都不可以再拆分。
 * 第二范式：在第一范式的基础上，非主键列完全依赖于主键，而不能是依赖于主键的一部分。

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>mysql基础知识 · GitBook</title>
+        <title>mysql · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,6 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="redis.html" />
+    
+    
+    <link rel="prev" href="nginx.html" />
     
 
     </head>
@@ -183,12 +187,64 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="mysql.html">
+        <li class="chapter " data-level="1.3.1" data-path="linux.html">
+            
+                <a href="linux.html">
+            
+                    
+                    linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="nginx.html">
+            
+                <a href="nginx.html">
+            
+                    
+                    nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="mysql.html">
             
                 <a href="mysql.html">
             
                     
-                    mysql基础知识
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="redis.html">
+            
+                <a href="redis.html">
+            
+                    
+                    redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="clickhouse.html">
+            
+                <a href="clickhouse.html">
+            
+                    
+                    clickhouse
             
                 </a>
             
@@ -263,7 +319,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >mysql基础知识</a>
+        <a href=".." >mysql</a>
     </h1>
 </div>
 
@@ -278,7 +334,81 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x6570;&#x636E;&#x5E93;&#x4E09;&#x5927;&#x8303;&#x5F0F;">&#x6570;&#x636E;&#x5E93;&#x4E09;&#x5927;&#x8303;&#x5F0F;</h3>
+                                <h3 id="linux&#x4E0B;mysql&#x5B89;&#x88C5;">linux&#x4E0B;mysql&#x5B89;&#x88C5;</h3>
+<p>1.&#x68C0;&#x67E5;&#x662F;&#x5426;&#x5DF2;&#x5B89;&#x88C5;&#x8FC7;mysql,&#x6267;&#x884C;&#x547D;&#x4EE4;</p>
+<pre><code>rpm -qa | grep mysql
+//&#x793A;&#x4F8B;
+&gt; mysql-libs-5.1.73-5.el6_6.x86_64
+</code></pre><p>2.&#x82E5;&#x5B89;&#x88C5;&#xFF0C;&#x5220;&#x9664;</p>
+<pre><code>rpm -e --nodeps mysql-libs-5.1.73-5.el6_6.x86_64
+</code></pre><p>3.&#x518D;&#x6B21;&#x67E5;&#x770B;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x8FC7;</p>
+<pre><code>rpm -qa | grep mysql
+</code></pre><p>4.&#x67E5;&#x8BE2;&#x6240;&#x6709;mysql&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x5939;</p>
+<pre><code>whereis mysql
+//&#x793A;&#x4F8B;:
+&gt; mysql: /usr/bin/mysql /usr/local/mysql
+find / -name mysql
+&gt; /run/lock/subsys/mysql
+&gt; /var/lib/selinux/targeted/active/modules/100/mysql
+&gt; /usr/bin/mysql
+</code></pre><p>5.&#x5220;&#x9664;mysql&#x76EE;&#x5F55;</p>
+<pre><code>rm -rf /run/lock/subsys/mysql /var/lib/selinux/targeted/active/modules/100/mysql /usr/bin/mysql
+</code></pre><p>6.&#x68C0;&#x67E5;mysql&#x7528;&#x6237;&#x7EC4;&#x548C;&#x7528;&#x6237;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x5219;&#x521B;&#x5EFA;</p>
+<pre><code>cat /etc/group | grep mysql
+cat /etc/passwd | grep mysql
+groupadd mysql
+useradd -r -g mysql mysql
+</code></pre><p>7.&#x4E0B;&#x8F7D;mysql,<a href="https://downloads.mysql.com/archives/community/" target="_blank">mysql&#x4E0B;&#x8F7D;&#x5730;&#x5740;</a></p>
+<pre><code>wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
+</code></pre><p>8.&#x89E3;&#x538B;</p>
+<pre><code>tar xvf https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
+</code></pre><p>9.&#x79FB;&#x52A8;&#x6587;&#x4EF6;&#x81F3;/usr/local&#x4E0B;,&#x5E76;&#x5C06;&#x6587;&#x4EF6;&#x6539;&#x540D;&#x4E3A;mysql</p>
+<pre><code>mv mysql-5.7.26-linux-glibc2.12-x86_64 /usr/local/mysql
+</code></pre><p>10.&#x5728;usr/local/mysql&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;logs&#x76EE;&#x5F55;&#xFF0C;&#x9700;&#x8981;&#x5199;&#x6743;&#x9650;</p>
+<pre><code>mkdir /usr/local/mysql/logs
+chmod 777 -R /usr/local/mysql/logs
+</code></pre><p>11.&#x66F4;&#x6539;mysql&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x7684;&#x76EE;&#x5F55;&#x53CA;&#x6587;&#x4EF6;&#x5939;&#x6240;&#x5C5E;&#x7684;&#x7528;&#x6237;&#x7EC4;&#x548C;&#x7528;&#x6237;&#xFF0C;&#x4EE5;&#x53CA;&#x6743;&#x9650;</p>
+<pre><code>chown -R mysql:mysql /usr/local/mysql
+chmod -R 755 /usr/local/mysql
+</code></pre><p>12.&#x914D;&#x7F6E;my.cnf</p>
+<pre><code>[mysqld]
+bind-address=0.0.0.0
+port=3306
+user=mysql
+basedir=/usr/local/mysql
+datadir=/usr/local/mysql/data
+socket=/usr/local/mysql/data/mysql.sock
+log-error=/usr/local/mysql/logs/mysql.err
+pid-file=/usr/local/mysql/logs/mysql.pid
+#character config
+character_set_server=utf8mb4
+symbolic-links=0
+explicit_defaults_for_timestamp=true
+</code></pre><p>13.&#x7F16;&#x8BD1;</p>
+<pre><code>cd /usr/local/mysql/bin
+./mysqld --initialize --default-files=/etc/my.cnf --user=mysql --datadir=/usr/local/mysql/data --basedir=/usr/local/mysql
+</code></pre><p>14.&#x7F16;&#x8BD1;&#x6210;&#x529F;&#xFF0C;&#x8BB0;&#x4F4F;&#x5BC6;&#x7801;</p>
+<pre><code>cat /usr/local/mysql/logs/mysql.log
+</code></pre><p>15.&#x542F;&#x52A8;</p>
+<pre><code>service mysql start
+</code></pre><p>16.&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x3001;&#x5916;&#x90E8;&#x8FDE;&#x63A5;&#x3001;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<pre><code>//&#x4FEE;&#x6539;&#x5BC6;&#x7801;
+cd /usr/local/mysql/bin
+./mysql -uroot -p
+set password = password(&apos;&#x4F60;&#x7684;&#x5BC6;&#x7801;&apos;);
+alter user &apos;root&apos;@&apos;localhost&apos; password expire never;
+flush privileges;
+
+//&#x5141;&#x8BB8;&#x5916;&#x90E8;&#x8FDE;&#x63A5;
+./mysql -uroot -p
+use mysql;
+update user set host = &apos;%&apos; where user = &apos;root&apos;;
+flush privileges;
+
+//&#x5168;&#x5C40;&#x73AF;&#x5883;&#x53D8;&#x91CF;,&#x5EFA;&#x7ACB;&#x8F6F;&#x8FDE;&#x63A5;
+cd /
+ln -s /usr/local/mysql/bin/mysql /usr/bin/mysql
+</code></pre><h3 id="&#x6570;&#x636E;&#x5E93;&#x4E09;&#x5927;&#x8303;&#x5F0F;">&#x6570;&#x636E;&#x5E93;&#x4E09;&#x5927;&#x8303;&#x5F0F;</h3>
 <ul>
 <li>&#x7B2C;&#x4E00;&#x8303;&#x5F0F;&#xFF1A;&#x6BCF;&#x4E2A;&#x5217;&#x90FD;&#x4E0D;&#x53EF;&#x4EE5;&#x518D;&#x62C6;&#x5206;&#x3002;</li>
 <li>&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;&#xFF1A;&#x5728;&#x7B2C;&#x4E00;&#x8303;&#x5F0F;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x975E;&#x4E3B;&#x952E;&#x5217;&#x5B8C;&#x5168;&#x4F9D;&#x8D56;&#x4E8E;&#x4E3B;&#x952E;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;&#x4E3B;&#x952E;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</li>
@@ -559,6 +689,14 @@
 
             
                 
+                <a href="nginx.html" class="navigation navigation-prev " aria-label="Previous page: nginx">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="redis.html" class="navigation navigation-next " aria-label="Next page: redis">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -567,7 +705,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mysql基础知识","level":"1.3.1","depth":2,"next":{"title":"项目接口文档","level":"1.4","depth":1,"ref":"","articles":[{"title":"shoes接口文档","level":"1.4.1","depth":2,"path":"doc/shoes.md","ref":"doc/shoes.md","articles":[]}]},"previous":{"title":"mysql","level":"1.3","depth":1,"ref":"","articles":[{"title":"mysql基础知识","level":"1.3.1","depth":2,"path":"doc/mysql.md","ref":"doc/mysql.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/mysql.md","mtime":"2021-03-18T07:28:21.180Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-27T07:29:32.283Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mysql","level":"1.3.3","depth":2,"next":{"title":"redis","level":"1.3.4","depth":2,"path":"doc/redis.md","ref":"doc/redis.md","articles":[]},"previous":{"title":"nginx","level":"1.3.2","depth":2,"path":"doc/nginx.md","ref":"doc/nginx.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/mysql.md","mtime":"2021-03-29T10:09:42.652Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-29T10:10:01.089Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
