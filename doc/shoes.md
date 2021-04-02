@@ -18,7 +18,7 @@
 | page_no | false | nuber | 页码,默认0 |
 | gender | false | string | women=女性 men=男性 younth=青少年 infant=儿童 |
 | size | false | string | 尺码，欧码 |
-| sortBy | false | string | 排序规则:soldNum=销量 dewu_price=得物价格 goat_price=goat价格 cha_price=差价,默认cha_price,由dewu_price-goat_price计算而成 |
+| sortBy | false | string | 排序规则:dewu_sold_num=得物销量 dewu_price=得物价格 goat_price=goat价格 cha_price=差价,默认cha_price,由dewu_price-goat_price计算而成 |
 | sortModel | false | number | 排序方式:0=从小到大 1=从大到小 |
 
 ### 结果示例

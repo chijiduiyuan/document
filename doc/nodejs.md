@@ -1,3 +1,17 @@
+# linux node安装
+1.下载node,[下载地址](https://nodejs.org/en/download/)
+```
+cd /usr/local/
+wget https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-x64.tar.xz
+tar xf node-v12.18.1-linux-x64.tar.xz
+mv node-v12.18.1-linux-x64.tar.xz nodejs
+cd nodejs
+cp /etc/profile /etc/profile.bak //备份配置文件
+export PATH=$PATH:/root/node-v12.18.1-linux-x64/bin //配置环境变量
+source /etc/profile
+node -v //查看node版本
+```
+
 # 基础知识
 
 [nodejs入门](http://nodejs.cn/learn)
