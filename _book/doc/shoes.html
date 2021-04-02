@@ -384,7 +384,7 @@
 <td>sortBy</td>
 <td>false</td>
 <td>string</td>
-<td>&#x6392;&#x5E8F;&#x89C4;&#x5219;:soldNum=&#x9500;&#x91CF; dewu_price=&#x5F97;&#x7269;&#x4EF7;&#x683C; goat_price=goat&#x4EF7;&#x683C; cha_price=&#x5DEE;&#x4EF7;,&#x9ED8;&#x8BA4;cha_price</td>
+<td>&#x6392;&#x5E8F;&#x89C4;&#x5219;:soldNum=&#x9500;&#x91CF; dewu_price=&#x5F97;&#x7269;&#x4EF7;&#x683C; goat_price=goat&#x4EF7;&#x683C; cha_price=&#x5DEE;&#x4EF7;,&#x9ED8;&#x8BA4;cha_price,&#x7531;dewu_price-goat_price&#x8BA1;&#x7B97;&#x800C;&#x6210;</td>
 </tr>
 <tr>
 <td>sortModel</td>
@@ -397,15 +397,31 @@
 <h3 id="&#x7ED3;&#x679C;&#x793A;&#x4F8B;">&#x7ED3;&#x679C;&#x793A;&#x4F8B;</h3>
 <pre><code class="lang-js">[
     {
-        <span class="hljs-string">&quot;sku&quot;</span>: <span class="hljs-string">&quot;BV0072-001&quot;</span>, <span class="hljs-comment">//&#x901A;&#x7528;sku,&#x4E3B;&#x8D27;&#x53F7;</span>
-        <span class="hljs-string">&quot;images&quot;</span>: <span class="hljs-string">&quot;[\&quot;https://cdn.poizon.com/source-img/origin-img/20201205/0156207812a54a1e9a464f4185ce38db.jpg\&quot;]&quot;</span>, <span class="hljs-comment">//&#x5546;&#x54C1;&#x4E3B;&#x56FE;</span>
-        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Sacai x Nike Blazer Mid Black Blue &#x89E3;&#x6784; &#x767D;&#x84DD;&quot;</span>, <span class="hljs-comment">//&#x5546;&#x54C1;&#x540D;</span>
-        <span class="hljs-string">&quot;dewu_price&quot;</span>: <span class="hljs-number">217900</span>, <span class="hljs-comment">//&#x5F97;&#x7269;&#x4EF7;&#x683C;(&#x5206;)</span>
-        <span class="hljs-string">&quot;goat_price&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">//goat&#x4EF7;&#x683C;(&#x5206;)</span>
-        <span class="hljs-string">&quot;cha_price&quot;</span>: <span class="hljs-number">217900</span>, <span class="hljs-comment">//&#x5DEE;&#x4EF7;(&#x5206;)</span>
-        <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-literal">null</span>, <span class="hljs-comment">//&#x5C3A;&#x7801;</span>
-        <span class="hljs-string">&quot;gender&quot;</span>: <span class="hljs-string">&quot;men&quot;</span>, <span class="hljs-comment">//&#x8EAB;&#x4EFD;</span>
-        <span class="hljs-string">&quot;sold_num&quot;</span>: <span class="hljs-number">33976</span> <span class="hljs-comment">//&#x9500;&#x91CF;</span>
+        <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-comment">//&#x5546;&#x54C1;id</span>
+        <span class="hljs-string">&quot;sku&quot;</span>: <span class="hljs-string">&quot;315122-111&quot;</span>, <span class="hljs-comment">//&#x4E3B;&#x8D27;&#x53F7;</span>
+        <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-string">&quot;43&quot;</span>, <span class="hljs-comment">//&#x5C3A;&#x7801;</span>
+        <span class="hljs-string">&quot;us_size&quot;</span>: <span class="hljs-string">&quot;9&quot;</span>, <span class="hljs-comment">//&#x7F8E;&#x7801;</span>
+        <span class="hljs-string">&quot;gender&quot;</span>: <span class="hljs-string">&quot;men&quot;</span>, <span class="hljs-comment">//&#x9002;&#x7528;&#x8303;&#x56F4;</span>
+        <span class="hljs-string">&quot;goat_price&quot;</span>: <span class="hljs-number">11900</span>, <span class="hljs-comment">//goat&#x4EF7;&#x683C;(&#x5206;)</span>
+        <span class="hljs-string">&quot;dewu_price&quot;</span>: <span class="hljs-number">74900</span>, <span class="hljs-comment">//&#x5F97;&#x7269;&#x4EF7;&#x683C;(&#x5206;)</span>
+        <span class="hljs-string">&quot;cha_price&quot;</span>: <span class="hljs-number">63000</span>, <span class="hljs-comment">//&#x5DEE;&#x4EF7;</span>
+        <span class="hljs-string">&quot;dewu_buy_log&quot;</span>: [ <span class="hljs-comment">//&#x5F97;&#x7269;&#x8D2D;&#x4E70;&#x8BB0;&#x5F55;</span>
+            {
+                <span class="hljs-string">&quot;avatar&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/du_app/2020/image/50574925_byte91265byte_f846ef977e463f79adf65efd42874789_iOS_w828h828.jpg?imageView2/2/w/50/h/50&quot;</span>,
+                <span class="hljs-string">&quot;userName&quot;</span>: <span class="hljs-string">&quot;&#x4ECA;*&#x4E48;&quot;</span>,
+                <span class="hljs-string">&quot;formatTime&quot;</span>: <span class="hljs-string">&quot;&#x521A;&#x521A;&quot;</span>,
+                <span class="hljs-string">&quot;orderSubTypeName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+                <span class="hljs-string">&quot;price&quot;</span>: <span class="hljs-number">72900</span>,
+                <span class="hljs-string">&quot;propertiesValues&quot;</span>: <span class="hljs-string">&quot;42.5&quot;</span>
+            },
+        ],
+        <span class="hljs-string">&quot;dewu_sold_num&quot;</span>: <span class="hljs-number">593879</span>, <span class="hljs-comment">//&#x5F97;&#x7269;&#x9500;&#x91CF;,</span>
+        <span class="hljs-string">&quot;dewu_link&quot;</span>: <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-comment">//&#x5F97;&#x7269;&#x8DF3;&#x8F6C;&#x8FDE;&#x63A5;,</span>
+        <span class="hljs-string">&quot;goat_link&quot;</span>: <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-comment">//goat&#x8DF3;&#x8F6C;&#x8FDE;&#x63A5;,</span>
+        <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#x3010;Jennie&#x540C;&#x6B3E;&#x3011;Nike Air Force 1 07 low &#x7A7A;&#x519B;&#x4E00;&#x53F7; &#x767D;&#x8272; &#x677F;&#x978B;&quot;</span>, <span class="hljs-comment">//&#x6807;&#x9898;</span>
+        <span class="hljs-string">&quot;sub_title&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+        <span class="hljs-string">&quot;images&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/pro-img/origin-img/20201228/9ba0d5f565f647c88f4885ee3921a082.jpg&quot;</span>,
+        <span class="hljs-string">&quot;sell_date&quot;</span>: <span class="hljs-string">&quot;2017.01.01&quot;</span> <span class="hljs-comment">//&#x53D1;&#x552E;&#x65E5;&#x671F;</span>
     }
 ]
 </code></pre>
@@ -439,23 +455,72 @@
 </thead>
 <tbody>
 <tr>
-<td>sku</td>
+<td>goods_id</td>
 <td>true</td>
-<td>string</td>
-<td>&#x4E3B;&#x8D27;&#x53F7;</td>
+<td>int</td>
+<td>&#x5546;&#x54C1;id</td>
 </tr>
 </tbody>
 </table>
 <h3 id="&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x793A;&#x4F8B;">&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x793A;&#x4F8B;</h3>
 <pre><code class="lang-js">{
-    <span class="hljs-string">&quot;sku&quot;</span>: <span class="hljs-string">&quot;394053-001&quot;</span>,
-    <span class="hljs-string">&quot;images&quot;</span>: <span class="hljs-string">&quot;[\&quot;https://cdn.poizon.com/source-img/origin-img/20201207/aaf94b73977f4c3fbd4aabe5ca912da1.jpg\&quot;]&quot;</span>,
-    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#x3010;&#x5468;&#x96E8;&#x5F64;&#x540C;&#x6B3E;&#x3011;Nike Initiator &#x7070;&#x94F6; &#x5973;&#x6B3E;&quot;</span>,
-    <span class="hljs-string">&quot;dewu_price&quot;</span>: <span class="hljs-number">53900</span>,
+    <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">201</span>,
+    <span class="hljs-string">&quot;sku&quot;</span>: <span class="hljs-string">&quot;BV2667-010&quot;</span>,
+    <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-string">&quot;XXXL&quot;</span>,
+    <span class="hljs-string">&quot;us_size&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;gender&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
     <span class="hljs-string">&quot;goat_price&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;cha_price&quot;</span>: <span class="hljs-number">53900</span>,
-    <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-literal">null</span>,
-    <span class="hljs-string">&quot;buy_log&quot;</span>: <span class="hljs-literal">null</span>
+    <span class="hljs-string">&quot;dewu_price&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;cha_price&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;dewu_buy_log&quot;</span>: [
+        {
+            <span class="hljs-string">&quot;avatar&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/du_app/2019/image/62560283_byte88212byte_eb6f472c09b74ecfbac79a68eed25af7_iOS_w750h750.jpg?imageView2/2/w/50/h/50&quot;</span>,
+            <span class="hljs-string">&quot;userName&quot;</span>: <span class="hljs-string">&quot;&#x7231;*&#x5973;&quot;</span>,
+            <span class="hljs-string">&quot;formatTime&quot;</span>: <span class="hljs-string">&quot;4&#x5206;&#x949F;&#x524D;&quot;</span>,
+            <span class="hljs-string">&quot;orderSubTypeName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;price&quot;</span>: <span class="hljs-number">24900</span>,
+            <span class="hljs-string">&quot;propertiesValues&quot;</span>: <span class="hljs-string">&quot;XL&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;avatar&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/du_app/2020/image/65177046_byte192371byte_deb88196070fed74d1eff7cf9ec19943_iOS_w1125h1125.jpg?imageView2/2/w/50/h/50&quot;</span>,
+            <span class="hljs-string">&quot;userName&quot;</span>: <span class="hljs-string">&quot;G*&#x4E03;&quot;</span>,
+            <span class="hljs-string">&quot;formatTime&quot;</span>: <span class="hljs-string">&quot;4&#x5206;&#x949F;&#x524D;&quot;</span>,
+            <span class="hljs-string">&quot;orderSubTypeName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;price&quot;</span>: <span class="hljs-number">24900</span>,
+            <span class="hljs-string">&quot;propertiesValues&quot;</span>: <span class="hljs-string">&quot;XL&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;avatar&quot;</span>: <span class="hljs-string">&quot;https://du.hupucdn.com/FhQbGz1UY2Znmn1GxpHedYSm-AWV?imageView2/2/w/50/h/50&quot;</span>,
+            <span class="hljs-string">&quot;userName&quot;</span>: <span class="hljs-string">&quot;&#x6253;*5&quot;</span>,
+            <span class="hljs-string">&quot;formatTime&quot;</span>: <span class="hljs-string">&quot;5&#x5206;&#x949F;&#x524D;&quot;</span>,
+            <span class="hljs-string">&quot;orderSubTypeName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;price&quot;</span>: <span class="hljs-number">24900</span>,
+            <span class="hljs-string">&quot;propertiesValues&quot;</span>: <span class="hljs-string">&quot;M&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;avatar&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50&quot;</span>,
+            <span class="hljs-string">&quot;userName&quot;</span>: <span class="hljs-string">&quot;&#x806A;*f&quot;</span>,
+            <span class="hljs-string">&quot;formatTime&quot;</span>: <span class="hljs-string">&quot;29&#x5206;&#x949F;&#x524D;&quot;</span>,
+            <span class="hljs-string">&quot;orderSubTypeName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;price&quot;</span>: <span class="hljs-number">22900</span>,
+            <span class="hljs-string">&quot;propertiesValues&quot;</span>: <span class="hljs-string">&quot;XXL&quot;</span>
+        },
+        {
+            <span class="hljs-string">&quot;avatar&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50&quot;</span>,
+            <span class="hljs-string">&quot;userName&quot;</span>: <span class="hljs-string">&quot;&#x4FCA;*2&quot;</span>,
+            <span class="hljs-string">&quot;formatTime&quot;</span>: <span class="hljs-string">&quot;45&#x5206;&#x949F;&#x524D;&quot;</span>,
+            <span class="hljs-string">&quot;orderSubTypeName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+            <span class="hljs-string">&quot;price&quot;</span>: <span class="hljs-number">24900</span>,
+            <span class="hljs-string">&quot;propertiesValues&quot;</span>: <span class="hljs-string">&quot;L&quot;</span>
+        }
+    ],
+    <span class="hljs-string">&quot;dewu_sold_num&quot;</span>: <span class="hljs-number">118805</span>,
+    <span class="hljs-string">&quot;dewu_link&quot;</span>: <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-comment">//&#x5F97;&#x7269;&#x8DF3;&#x8F6C;&#x8FDE;&#x63A5;,</span>
+    <span class="hljs-string">&quot;goat_link&quot;</span>: <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-comment">//goat&#x8DF3;&#x8F6C;&#x8FDE;&#x63A5;,</span>
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Nike &#x5FBD;&#x6807;&#x957F;&#x8896;&#x5706;&#x9886;&#x4F11;&#x95F2;&#x536B;&#x8863; &#x7537;&#x6B3E; &#x9ED1;&#x8272;&quot;</span>,
+    <span class="hljs-string">&quot;sub_title&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;images&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/pro-img/origin-img/20210119/985d0cd2caac4a75abfa3e7cb7327ef2.jpg&quot;</span>,
+    <span class="hljs-string">&quot;sell_date&quot;</span>: <span class="hljs-string">&quot;2019&#x590F;&#x5B63;&quot;</span>
 }
 </code></pre>
 
@@ -493,7 +558,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shoes接口文档","level":"1.4.1","depth":2,"previous":{"title":"项目接口文档","level":"1.4","depth":1,"ref":"","articles":[{"title":"shoes接口文档","level":"1.4.1","depth":2,"path":"doc/shoes.md","ref":"doc/shoes.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/shoes.md","mtime":"2021-03-27T07:11:15.527Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-29T10:10:01.089Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shoes接口文档","level":"1.4.1","depth":2,"previous":{"title":"项目接口文档","level":"1.4","depth":1,"ref":"","articles":[{"title":"shoes接口文档","level":"1.4.1","depth":2,"path":"doc/shoes.md","ref":"doc/shoes.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/shoes.md","mtime":"2021-04-02T08:20:44.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-02T08:21:20.654Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
