@@ -523,88 +523,6 @@
     <span class="hljs-string">&quot;sell_date&quot;</span>: <span class="hljs-string">&quot;2019&#x590F;&#x5B63;&quot;</span>
 }
 </code></pre>
-<h1 id="&#x914D;&#x7F6E;&#x4FE1;&#x606F;">&#x914D;&#x7F6E;&#x4FE1;&#x606F;</h1>
-<h3 id="url">URL</h3>
-<p><code>/config/data</code></p>
-<h3 id="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;">&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</h3>
-<table>
-<thead>
-<tr>
-<th>HTTP&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>method</td>
-<td>get</td>
-</tr>
-</tbody>
-</table>
-<h3 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>&#x5FC5;&#x9009;</th>
-<th>&#x7C7B;&#x578B;&#x53CA;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="&#x8FD4;&#x56DE;&#x7ED3;&#x679C;">&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</h3>
-<pre><code>{
-    &quot;dewu-brand_id_list&quot;: &quot;{\&quot;13\&quot;:\&quot;Air Jordan\&quot;,\&quot;144\&quot;:\&quot;Nike\&quot;,\&quot;4\&quot;:\&quot;New Balance\&quot;,\&quot;494\&quot;:\&quot;addidas\&quot;}&quot;, //&#x5F97;&#x7269;&#x54C1;&#x724C;&#x5217;&#x8868;
-    &quot;site-description&quot;: &quot;&#x4EC5;&#x4F5C;&#x4E3A;&#x5B66;&#x4E60;&#x7528;&#xFF0C;&#x81EA;&#x4E70;&#x4E0D;&#x7092;&#xFF0C;wink&quot; //&#x7AD9;&#x70B9;&#x63CF;&#x8FF0;
-}
-</code></pre><h1 id="&#x914D;&#x7F6E;&#x8BBE;&#x7F6E;">&#x914D;&#x7F6E;&#x8BBE;&#x7F6E;</h1>
-<h3 id="url">URL</h3>
-<p><code>/config/set</code></p>
-<h3 id="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;">&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</h3>
-<table>
-<thead>
-<tr>
-<th>HTTP&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>method</td>
-<td>post</td>
-</tr>
-</tbody>
-</table>
-<h3 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>&#x5FC5;&#x9009;</th>
-<th>&#x7C7B;&#x578B;&#x53CA;&#x8303;&#x56F4;</th>
-<th>&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>key</td>
-<td>true</td>
-<td>string</td>
-<td>&#x8981;&#x8BBE;&#x7F6E;&#x7684;key</td>
-</tr>
-<tr>
-<td>val</td>
-<td>true</td>
-<td>string</td>
-<td>&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x503C;</td>
-</tr>
-</tbody>
-</table>
 <h1 id="&#x540C;&#x6B65;&#x5F97;&#x7269;&#x5546;&#x54C1;&#x5217;&#x8868;">&#x540C;&#x6B65;&#x5F97;&#x7269;&#x5546;&#x54C1;&#x5217;&#x8868;</h1>
 <h3 id="url">URL</h3>
 <p><code>/dewu/sync_list</code></p>
@@ -635,7 +553,10 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>brandId</td>
+<td>true</td>
+<td>int</td>
+<td>&#x54C1;&#x724C;id,13 =Air Jordan 144 = nike  4=New Balance 494=addidas</td>
 </tr>
 </tbody>
 </table>
@@ -729,7 +650,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shoes接口文档","level":"1.4.1","depth":2,"previous":{"title":"项目接口文档","level":"1.4","depth":1,"ref":"","articles":[{"title":"shoes接口文档","level":"1.4.1","depth":2,"path":"doc/shoes.md","ref":"doc/shoes.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/shoes.md","mtime":"2021-04-07T02:17:33.626Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-07T02:19:09.549Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shoes接口文档","level":"1.4.1","depth":2,"previous":{"title":"项目接口文档","level":"1.4","depth":1,"ref":"","articles":[{"title":"shoes接口文档","level":"1.4.1","depth":2,"path":"doc/shoes.md","ref":"doc/shoes.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/shoes.md","mtime":"2021-04-07T10:59:07.190Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-07T10:59:40.179Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
