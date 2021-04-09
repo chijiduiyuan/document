@@ -1,6 +1,55 @@
 > HOST http://api.zhang1009.com
 
 
+登录注册
+======================
+### URL
+
+`/user/login`
+
+### 请求方法
+| HTTP请求方式 | 说明 |
+| ----- | ----- |
+| method | post | 
+
+### 请求参数
+|    | 必选 | 类型及范围 | 说明 |
+| ----- | ----- | ------- | ---------- |
+| account | true | string | 登录账号 |
+| password | true | string | md5加密密码 |
+
+### 返回结果头部信息
+```
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MTYxNzk1ODY3NSwiZXhwIjoxNjIwNTUwNjc1fQ.KHExoMRYkRzZCXDNVG0XJKgvUOTXhVqLvCtAdCnwh6o
+```
+
+用户信息
+======================
+### URL
+
+`/user/info`
+
+### 请求方法
+| HTTP请求方式 | 说明 |
+| ----- | ----- |
+| method | get | 
+
+### 头部参数
+|    | 必选 | 类型及范围 | 说明 |
+| ----- | ----- | ------- | ---------- |
+| Authorization | true | string | 登录获取的token |
+
+### 返回结果示例
+```
+{
+    "uid": 6,
+    "username": "86-15070924883",
+    "avatar": null
+}
+```
+
+
+
 商品列表
 ======================
 ### URL
@@ -69,77 +118,81 @@
 ### 请求参数
 |    | 必选 | 类型及范围 | 说明 |
 | ----- | ----- | ------- | ---------- |
-| goods_id | true | int | 商品id |
+| sku | true | string | 商品sku |
 
 ### 返回结果示例
 ```   js
 {
-    "id": 201,
-    "sku": "BV2667-010",
-    "size": "XXXL",
-    "us_size": "",
-    "gender": "",
-    "goat_price": 0,
-    "dewu_price": 0,
-    "cha_price": 0,
-    "dewu_buy_log": [
-        {
-            "avatar": "https://cdn.poizon.com/du_app/2019/image/62560283_byte88212byte_eb6f472c09b74ecfbac79a68eed25af7_iOS_w750h750.jpg?imageView2/2/w/50/h/50",
-            "userName": "爱*女",
-            "formatTime": "4分钟前",
-            "orderSubTypeName": "",
-            "price": 24900,
-            "propertiesValues": "XL"
-        },
-        {
-            "avatar": "https://cdn.poizon.com/du_app/2020/image/65177046_byte192371byte_deb88196070fed74d1eff7cf9ec19943_iOS_w1125h1125.jpg?imageView2/2/w/50/h/50",
-            "userName": "G*七",
-            "formatTime": "4分钟前",
-            "orderSubTypeName": "",
-            "price": 24900,
-            "propertiesValues": "XL"
-        },
-        {
-            "avatar": "https://du.hupucdn.com/FhQbGz1UY2Znmn1GxpHedYSm-AWV?imageView2/2/w/50/h/50",
-            "userName": "打*5",
-            "formatTime": "5分钟前",
-            "orderSubTypeName": "",
-            "price": 24900,
-            "propertiesValues": "M"
-        },
-        {
-            "avatar": "https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50",
-            "userName": "聪*f",
-            "formatTime": "29分钟前",
-            "orderSubTypeName": "",
-            "price": 22900,
-            "propertiesValues": "XXL"
-        },
-        {
-            "avatar": "https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50",
-            "userName": "俊*2",
-            "formatTime": "45分钟前",
-            "orderSubTypeName": "",
-            "price": 24900,
-            "propertiesValues": "L"
-        }
-    ],
-    "dewu_sold_num": 118805,
-    "dewu_link": "", //得物跳转连接,
-    "goat_link": "", //goat跳转连接,
-    "title": "Nike 徽标长袖圆领休闲卫衣 男款 黑色",
+    "sku": "ML2002RC",
+    "images": "https://cdn.poizon.com/source-img/origin-img/20201206/a966510bf2ab4e01bcfb90b958fbcfb9.jpg",
+    "title": "New Balance 2002R 灰色",
     "sub_title": "",
-    "images": "https://cdn.poizon.com/pro-img/origin-img/20210119/985d0cd2caac4a75abfa3e7cb7327ef2.jpg",
-    "sell_date": "2019夏季"
+    "sell_date": "2020秋季",
+    "skuList": [
+        {
+            "sku": "ML2002RC",
+            "size": "36",
+            "us_size": "4",
+            "gender": "",
+            "goat_price": 0,
+            "dewu_price": 0,
+            "dewu_buy_log": "[{\"avatar\":\"http://thirdqq.qlogo.cn/g?b=oidb&k=lQC4wdVpaANH1Em84icHBNA&s=100?imageView2/2/w/50/h/50\",\"userName\":\"d*i\",\"formatTime\":\"20分钟前\",\"orderSubTypeName\":\"\",\"price\":123900,\"propertiesValues\":\"D宽 42\"},{\"avatar\":\"https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50\",\"userName\":\"斯*s\",\"formatTime\":\"46分钟前\",\"orderSubTypeName\":\"\",\"price\":143900,\"propertiesValues\":\"D宽 43\"},{\"avatar\":\"https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50\",\"userName\":\"很*f\",\"formatTime\":\"47分钟前\",\"orderSubTypeName\":\"\",\"price\":127900,\"propertiesValues\":\"D宽 44\"},{\"avatar\":\"https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50\",\"userName\":\"魁*E\",\"formatTime\":\"1小时前\",\"orderSubTypeName\":\"\",\"price\":111900,\"propertiesValues\":\"D宽 41.5\"},{\"avatar\":\"https://cdn.poizon.com/du_app/2020/image/38487553_byte95846byte_1fe256429c96bf0bba1d9244ec9089ea_iOS_w828h828.jpg?imageView2/2/w/50/h/50\",\"userName\":\"七*_\",\"formatTime\":\"2小时前\",\"orderSubTypeName\":\"\",\"price\":127900,\"propertiesValues\":\"D宽 44\"}]",
+            "dewu_sold_num": 23286,
+            "dewu_link": "https://m.dewu.com/router/product/ProductDetail?spuId=1192115&sourceName=shareDetail",
+            "goat_link": null
+        },
+    ]
 }
 ```
 
 
-同步得物商品列表
+创建仓库
 ======================
 ### URL
 
-`/dewu/sync_list`
+`/store/add_store`
+
+### 请求方法
+| HTTP请求方式 | 说明 |
+| ----- | ----- |
+| method | post | 
+
+### 请求参数
+|    | 必选 | 类型及范围 | 说明 |
+| ----- | ----- | ------- | ---------- |
+| title | false | string | 仓库标题 |
+| des | false | string | 仓库描述 |
+
+
+
+录单
+======================
+### URL
+
+`/store/add_store_goods`
+
+### 请求方法
+| HTTP请求方式 | 说明 |
+| ----- | ----- |
+| method | post | 
+
+### 请求参数
+|    | 必选 | 类型及范围 | 说明 |
+| ----- | ----- | ------- | ---------- |
+| id | true | int | 仓库id |
+| sku | true | int | 商品sku |
+| size | true | int | 欧码 |
+| us_size | false | string | 美码 |
+| gender | false | string | 身份 |
+| buy_price | true | int | 进价(分) |
+| sell_price | true | false | 售价 |
+
+
+仓库/仓库商品列表
+======================
+### URL
+
+`/store/list`
 
 ### 请求方法
 | HTTP请求方式 | 说明 |
@@ -149,7 +202,43 @@
 ### 请求参数
 |    | 必选 | 类型及范围 | 说明 |
 | ----- | ----- | ------- | ---------- |
-| brandId | true | int | 品牌id,13 =Air Jordan 144 = nike  4=New Balance 494=addidas |
+| type | false | int | 0=仓库列表 1=仓库商品列表，默认0 |
+| id | false | int | 仓库id，获取仓库商品列表时必须 |
+| page_no | false | int | 页码，默认0 |
+
+
+### 返回结果示例
+```
+//仓库列表
+[
+    {
+        "id": 1, //仓库id
+        "parent_id": 0,
+        "uid": 6,
+        "title": "默认仓库", //仓库标题
+        "des": "", //仓库描述
+        "type": 0,
+        "content": null,
+        "created_time": 1617964045,
+        "updated_time": 1617964045
+    }
+]
+
+
+//仓库商品列表
+[
+    {
+        "sku": "315",
+        "title": "",
+        "images": "",
+        "size": "36.5",
+        "us_size": "6.5",
+        "gender": "women",
+        "buy_price": 1703, //进价(分)
+        "sell_price": 0 //售价(分)
+    }
+]
+```
 
 
 同步全部商品goat信息
