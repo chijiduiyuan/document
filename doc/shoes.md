@@ -1,5 +1,9 @@
 > HOST http://api.zhang1009.com
 
+#### 预估收益计算方式
+> 当goat价格 小于 得物价格，默认goat购买，得物卖出。goat额外费用为9.1%税费 + 128元配送费，计算方式：商品价格*0.091 + 12800；dewu额外费用为6%手续费 + 33元操作服务费，计算方式：商品价格*0.06 + 3300。
+> 当goat价格 大于 得物价格，默认goat卖出，得物购买。goat额外费用为9%手续费 + 14元运往深圳仓物流费 + 深圳仓发货物流费用(暂时未知) + goat提现手续费(暂时未知)，计算方式：商品价格*0.09 + 1400；dewu额外费用为物流费用14元，计算方式：1400.
+> 物流费用受地域影响，不同地区会有差异。
 
 登录注册
 ======================
@@ -98,7 +102,10 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MT
         "title": "【Jennie同款】Nike Air Force 1 07 low 空军一号 白色 板鞋", //标题
         "sub_title": "",
         "images": "https://cdn.poizon.com/pro-img/origin-img/20201228/9ba0d5f565f647c88f4885ee3921a082.jpg",
-        "sell_date": "2017.01.01" //发售日期
+        "sell_date": "2017.01.01", //发售日期
+        "amount": 88156, //预估收益(分)
+        "goat_extra_price": 29562, //goat额外费用
+        "dewu_extra_price": 22782 //得物额外费用
     }
 ]
 ```
@@ -139,7 +146,10 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MT
             "dewu_buy_log": "[{\"avatar\":\"http://thirdqq.qlogo.cn/g?b=oidb&k=lQC4wdVpaANH1Em84icHBNA&s=100?imageView2/2/w/50/h/50\",\"userName\":\"d*i\",\"formatTime\":\"20分钟前\",\"orderSubTypeName\":\"\",\"price\":123900,\"propertiesValues\":\"D宽 42\"},{\"avatar\":\"https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50\",\"userName\":\"斯*s\",\"formatTime\":\"46分钟前\",\"orderSubTypeName\":\"\",\"price\":143900,\"propertiesValues\":\"D宽 43\"},{\"avatar\":\"https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50\",\"userName\":\"很*f\",\"formatTime\":\"47分钟前\",\"orderSubTypeName\":\"\",\"price\":127900,\"propertiesValues\":\"D宽 44\"},{\"avatar\":\"https://cdn.poizon.com/node-common/TGFyazIwMjAwMzIwLTE4MzQ0OA==.png?imageView2/2/w/50/h/50\",\"userName\":\"魁*E\",\"formatTime\":\"1小时前\",\"orderSubTypeName\":\"\",\"price\":111900,\"propertiesValues\":\"D宽 41.5\"},{\"avatar\":\"https://cdn.poizon.com/du_app/2020/image/38487553_byte95846byte_1fe256429c96bf0bba1d9244ec9089ea_iOS_w828h828.jpg?imageView2/2/w/50/h/50\",\"userName\":\"七*_\",\"formatTime\":\"2小时前\",\"orderSubTypeName\":\"\",\"price\":127900,\"propertiesValues\":\"D宽 44\"}]",
             "dewu_sold_num": 23286,
             "dewu_link": "https://m.dewu.com/router/product/ProductDetail?spuId=1192115&sourceName=shareDetail",
-            "goat_link": null
+            "goat_link": null,
+            "amount": 88156, //预估收益(分)
+            "goat_extra_price": 29562, //goat额外费用
+            "dewu_extra_price": 22782 //得物额外费用
         },
     ]
 }
