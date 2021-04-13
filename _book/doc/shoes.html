@@ -459,7 +459,7 @@
 <tr>
 <td>page_no</td>
 <td>false</td>
-<td>nuber</td>
+<td>number</td>
 <td>&#x9875;&#x7801;,&#x9ED8;&#x8BA4;0</td>
 </tr>
 <tr>
@@ -516,6 +516,8 @@
         <span class="hljs-string">&quot;sub_title&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
         <span class="hljs-string">&quot;images&quot;</span>: <span class="hljs-string">&quot;https://cdn.poizon.com/pro-img/origin-img/20201228/9ba0d5f565f647c88f4885ee3921a082.jpg&quot;</span>,
         <span class="hljs-string">&quot;sell_date&quot;</span>: <span class="hljs-string">&quot;2017.01.01&quot;</span>, <span class="hljs-comment">//&#x53D1;&#x552E;&#x65E5;&#x671F;</span>
+        <span class="hljs-string">&quot;dewu_brand_id&quot;</span>:<span class="hljs-number">144</span>, <span class="hljs-comment">//&#x5F97;&#x7269;&#x54C1;&#x724C;id</span>
+        <span class="hljs-string">&quot;dewu_spu_id&quot;</span>:<span class="hljs-number">240</span>, <span class="hljs-comment">//&#x5F97;&#x7269;spuId</span>
         <span class="hljs-string">&quot;amount&quot;</span>: <span class="hljs-number">88156</span>, <span class="hljs-comment">//&#x9884;&#x4F30;&#x6536;&#x76CA;(&#x5206;)</span>
         <span class="hljs-string">&quot;goat_extra_price&quot;</span>: <span class="hljs-number">29562</span>, <span class="hljs-comment">//goat&#x989D;&#x5916;&#x8D39;&#x7528;</span>
         <span class="hljs-string">&quot;dewu_extra_price&quot;</span>: <span class="hljs-number">22782</span> <span class="hljs-comment">//&#x5F97;&#x7269;&#x989D;&#x5916;&#x8D39;&#x7528;</span>
@@ -780,9 +782,9 @@
         &quot;sell_price&quot;: 0 //&#x552E;&#x4EF7;(&#x5206;)
     }
 ]
-</code></pre><h1 id="&#x540C;&#x6B65;&#x5168;&#x90E8;&#x5546;&#x54C1;goat&#x4FE1;&#x606F;">&#x540C;&#x6B65;&#x5168;&#x90E8;&#x5546;&#x54C1;goat&#x4FE1;&#x606F;</h1>
+</code></pre><h1 id="&#x540C;&#x6B65;&#x4E00;&#x4E2A;&#x54C1;&#x724C;dewu&#x5168;&#x90E8;&#x5546;&#x54C1;&#x4FE1;&#x606F;">&#x540C;&#x6B65;&#x4E00;&#x4E2A;&#x54C1;&#x724C;dewu&#x5168;&#x90E8;&#x5546;&#x54C1;&#x4FE1;&#x606F;</h1>
 <h3 id="url">URL</h3>
-<p><code>/goat/sync_list</code></p>
+<p><code>/dewu/sync_list</code></p>
 <h3 id="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;">&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</h3>
 <table>
 <thead>
@@ -798,7 +800,66 @@
 </tr>
 </tbody>
 </table>
-<h1 id="&#x540C;&#x6B65;sku&#x5546;&#x54C1;goat&#x4FE1;&#x606F;">&#x540C;&#x6B65;sku&#x5546;&#x54C1;goat&#x4FE1;&#x606F;</h1>
+<h3 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>&#x5FC5;&#x9009;</th>
+<th>&#x7C7B;&#x578B;&#x53CA;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brandId</td>
+<td>true</td>
+<td>number</td>
+<td>&#x5F97;&#x7269;&#x54C1;&#x724C;id</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>13 =Air Jordan   144 = Nike    4=New Balance   494 = Addidas    33 = &#x674E;&#x5B81;   10098 = Onitsuka Tiger.     34 = &#x5B89;&#x8E0F;   39 = GUCCI     1318 = FILA    36 = &#x5339;&#x514B;   10336 = Skechers  1000460 = &#x56DE;&#x529B;   176=&#x5321;&#x5A01;   10032= &#x5DF4;&#x5B9D;&#x8389;   10139 = Addidas Neo   10011 = Alexander McQueen  10012 = &#x5DF4;&#x9ECE;&#x4E16;&#x5BB6;   10176 = &#x8DEF;&#x6613;&#x5A01;&#x767B;  10106 = Dior    10027 = Dickies  10010 = PRADA    10347 = MLB   10223 = &#x7231;&#x9A6C;&#x4ED5;   1245 = OFF WHITE   10239 = &#x7279;&#x6B65;    2 = PUMA   7 = Under Armour   9= Vans    8 = Asics.</li>
+</ul>
+<h1 id="&#x6839;&#x636E;&#x5F97;&#x7269;spuid&#x540C;&#x6B65;&#x5546;&#x54C1;dewu&#x4FE1;&#x606F;">&#x6839;&#x636E;&#x5F97;&#x7269;spuId&#x540C;&#x6B65;&#x5546;&#x54C1;dewu&#x4FE1;&#x606F;</h1>
+<h3 id="url">URL</h3>
+<p><code>/dewu/sync_item</code></p>
+<h3 id="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;">&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</h3>
+<table>
+<thead>
+<tr>
+<th>HTTP&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td>get</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;">&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>&#x5FC5;&#x9009;</th>
+<th>&#x7C7B;&#x578B;&#x53CA;&#x8303;&#x56F4;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spu</td>
+<td>true</td>
+<td>string</td>
+<td>spu</td>
+</tr>
+</tbody>
+</table>
+<h1 id="&#x6839;&#x636E;sku&#x540C;&#x6B65;&#x5546;&#x54C1;goat&#x4FE1;&#x606F;">&#x6839;&#x636E;sku&#x540C;&#x6B65;&#x5546;&#x54C1;goat&#x4FE1;&#x606F;</h1>
 <h3 id="url">URL</h3>
 <p><code>/goat/sync_item</code></p>
 <h3 id="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;">&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</h3>
@@ -870,7 +931,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shoes接口文档","level":"1.4.1","depth":2,"previous":{"title":"项目接口文档","level":"1.4","depth":1,"ref":"","articles":[{"title":"shoes接口文档","level":"1.4.1","depth":2,"path":"doc/shoes.md","ref":"doc/shoes.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/shoes.md","mtime":"2021-04-11T06:25:53.044Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-11T06:26:24.672Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shoes接口文档","level":"1.4.1","depth":2,"previous":{"title":"项目接口文档","level":"1.4","depth":1,"ref":"","articles":[{"title":"shoes接口文档","level":"1.4.1","depth":2,"path":"doc/shoes.md","ref":"doc/shoes.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc/shoes.md","mtime":"2021-04-13T07:01:15.014Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-13T07:01:56.292Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

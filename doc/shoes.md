@@ -70,7 +70,7 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MT
 ### 请求参数
 |    | 必选 | 类型及范围 | 说明 |
 | ----- | ----- | ------- | ---------- |
-| page_no | false | nuber | 页码,默认0 |
+| page_no | false | number | 页码,默认0 |
 | gender | false | string | women=女性 men=男性 younth=青少年 infant=儿童 |
 | size | false | string | 尺码，欧码 |
 | sortBy | false | string | 排序规则:dewu_sold_num=得物销量 dewu_price=得物价格 goat_price=goat价格 cha_price=差价,默认cha_price,由dewu_price-goat_price计算而成 |
@@ -105,6 +105,8 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MT
         "sub_title": "",
         "images": "https://cdn.poizon.com/pro-img/origin-img/20201228/9ba0d5f565f647c88f4885ee3921a082.jpg",
         "sell_date": "2017.01.01", //发售日期
+        "dewu_brand_id":144, //得物品牌id
+        "dewu_spu_id":240, //得物spuId
         "amount": 88156, //预估收益(分)
         "goat_extra_price": 29562, //goat额外费用
         "dewu_extra_price": 22782 //得物额外费用
@@ -253,19 +255,45 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjYsImlhdCI6MT
 ```
 
 
-同步全部商品goat信息
+同步一个品牌dewu全部商品信息
 ======================
 ### URL
 
-`/goat/sync_list`
+`/dewu/sync_list`
 
 ### 请求方法
 | HTTP请求方式 | 说明 |
 | ----- | ----- |
 | method | get | 
 
+### 请求参数
+|    | 必选 | 类型及范围 | 说明 |
+| ----- | ----- | ------- | ---------- |
+| brandId | true | number | 得物品牌id |
 
-同步sku商品goat信息
+* 13 =Air Jordan   144 = Nike    4=New Balance   494 = Addidas    33 = 李宁   10098 = Onitsuka Tiger.     34 = 安踏   39 = GUCCI     1318 = FILA    36 = 匹克   10336 = Skechers  1000460 = 回力   176=匡威   10032= 巴宝莉   10139 = Addidas Neo   10011 = Alexander McQueen  10012 = 巴黎世家   10176 = 路易威登  10106 = Dior    10027 = Dickies  10010 = PRADA    10347 = MLB   10223 = 爱马仕   1245 = OFF WHITE   10239 = 特步    2 = PUMA   7 = Under Armour   9= Vans    8 = Asics.
+
+
+
+根据得物spuId同步商品dewu信息
+======================
+### URL
+
+`/dewu/sync_item`
+
+### 请求方法
+| HTTP请求方式 | 说明 |
+| ----- | ----- |
+| method | get | 
+
+### 请求参数
+|    | 必选 | 类型及范围 | 说明 |
+| ----- | ----- | ------- | ---------- |
+| spu | true | string | spu |
+
+
+
+根据sku同步商品goat信息
 ======================
 ### URL
 
